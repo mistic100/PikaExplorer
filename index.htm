@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="PikaExplorer">
+<head>
+  <meta charset="utf-8" />
+  
+  <link rel="stylesheet" href="assets/bootstrap/yeti/bootstrap.min.css"/>
+  <link rel="stylesheet" href="assets/fontello/css/fontello.css"/>
+  <link rel="stylesheet" href="assets/titillium/stylesheet.css"/>
+  <link rel="stylesheet" href="assets/mCustomScrollbar/jquery.mCustomScrollbar.css"/>
+  <link rel="stylesheet" href="src/sprites/all.css"/>
+  <link rel="stylesheet" href="src/css/style.css"/>
+</head>
+
+<body>
+
+<header class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <span class="navbar-brand">PikaExplorer</span>
+    </div>
+    
+    <nav class="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#/home"><i class="glyphicon glyphicon-home"></i> <span>Overview</span></a>
+        </li>
+        <li>
+          <a href="#/pokemons"><i class="icon-group"></i> <span>Pokémons</span></a>
+        </li>
+        <li>
+          <a href="#/pokedex"><i class="glyphicon glyphicon-book"></i> <span>Pokédex</span></a>
+        </li>
+        <li>
+          <a href="#/items"><i class="glyphicon glyphicon-align-justify"></i> <span>Items</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="page container">
+    <div ng-view></div>
+  </div>
+</div>
+
+
+<script src="assets/jquery-1.10.2.min.js"></script>
+
+<script src="assets/angular/angular.min.js"></script>
+<script src="assets/angular/angular-route.min.js"></script>
+
+<script src="assets/misc/jquery.mousewheel.min.js"></script>
+<script src="assets/mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+<script src="src/js/PikaExplorer.js"></script>
+<script src="src/js/PikaHomeCtrl.js"></script>
+<script src="src/js/PikaRBYSrvc.js"></script>
+
+<script src="src/js/data.js"></script>
+<script src="src/js/Reader.js"></script>
+<script src="src/js/RBY.js"></script>
+
+<script>
+  $('.wrapper').mCustomScrollbar({
+    theme: 'dark-thick',
+    scrollButtons:{
+      enable: true
+    }
+  });
+</script>
+
+</body>
+</html>

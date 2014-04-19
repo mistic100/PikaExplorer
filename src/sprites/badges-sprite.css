@@ -1,0 +1,14 @@
+[class*="badge-sprite"] {
+  width:64px;
+  height:64px;
+  background:url('badges-sprite.png') 64px 64px no-repeat;
+}
+
+.badge-sprite-boulder { background-position:0 0; }
+.badge-sprite-cascade { background-position:-64px 0; }
+.badge-sprite-thunder { background-position:-128px 0; }
+.badge-sprite-rainbow { background-position:-192px 0; }
+.badge-sprite-soul { background-position:-256px 0; }
+.badge-sprite-marsh { background-position:-320px 0; }
+.badge-sprite-volcano { background-position:-384px 0; }
+.badge-sprite-earth { background-position:-448px 0; }

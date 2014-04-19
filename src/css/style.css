@@ -1,0 +1,205 @@
+/*! general */
+@media (max-width: 480px) { 
+   .col-xxs {
+      display:block;
+      float:none;
+      width: 100%
+   }
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
+.col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,
+.col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,
+.col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  padding:0;
+}
+
+html, body {
+  height:100%;
+  overflow:hidden;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family:'Titilium','Calibri',sans-serif !important;
+}
+
+.media-content {
+  overflow:hidden;
+}
+
+.wrapper {
+  width:100%;
+  height:calc(100% - 50px);
+  position:relative;
+}
+@media (min-width:768px) {
+  .page {
+    padding-top:10px;
+  }
+}
+
+/*! header + nav */
+header {
+  height:50px;
+  line-height:50px;
+  margin-bottom:0px !important;
+}
+  .navbar-brand {
+    height:50px;
+    font-size:25px;
+  }
+
+  /* disable responsive navbar */
+  .navbar-header {
+    float: left;
+  }
+  .navbar-collapse {
+    display: block !important;
+    height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: none !important;
+  }
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+  }
+  .navbar-nav.navbar-right {
+    float: right;
+  }
+
+  .navbar-nav {
+    color:#fff;
+    font-size:16px;
+  }
+    .navbar-nav li {
+      cursor:pointer;
+      margin:5px;
+      padding:0;
+    }
+      .navbar-nav li a {
+        background:#333;
+        transition:background 0.4s ease;
+        padding:5px 10px;
+        line-height:30px;
+        height:40px;
+      }
+      .navbar-nav li span {
+        transition:margin 0.4s ease;
+      }
+      .navbar-nav li.active a {
+        background:#444 !important;
+        text-shadow:1px 1px 0px #000;
+      }
+      .navbar-nav li:hover  a{
+        background:#444 !important;
+        transition:background 0.2s ease;
+      }
+        .navbar-nav li:hover span {
+          margin-left:5px;
+          transition:margin 0.2s ease;
+        }
+        
+@media (max-width:775px) {
+  .navbar-nav li span {
+    display:none;
+  }
+}
+
+/*! home */
+.home-box  {
+  box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+  margin:5px;
+}
+.profile-card {
+  background:#336CA6;
+  padding:10px;
+  color:#fff;
+  font-size:1.1em;
+}
+  .profile-card .profile-image {
+    display:block;
+    margin-right:10px;
+  }
+  .profile-card .player-name {
+    margin-top:5px;
+  }
+    .profile-card .player-name small {
+      font-weight:300;
+      font-size:0.7em;
+    }
+
+@media (max-width: 480px) {
+  .profile-card .profile-image {
+    width:100px;
+    height:100px;
+  }
+}
+
+.badges-card {
+  background:#eee;
+}
+  .badges-card>div {
+    padding:5px;
+    text-align:center;
+    box-shadow:inset 0px 0px 10px rgba(255,255,255,0.2);
+    position:relative;
+  }
+    .badges-card>div.inactive:before {
+      content:'';
+      position:absolute;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+      background:rgba(127,127,127,0.8);
+    }
+    .badges-card [class*="badge-sprite"] {
+      margin:0 auto;
+    }
+    .badge-name {
+      margin:5px 0 0 0;
+      font-size:1em;
+      font-weight:normal;
+      background:rgba(255,255,255,0.2);
+      border-radius:4px;
+      text-shadow:1px 1px 0px rgba(255,255,255,0.2);
+    }
+    
+  .badges-card>div.boulder {
+    background:#B8A038;
+  }
+  .badges-card>div.cascade {
+    background:#6890F0;
+  }
+  .badges-card>div.thunder {
+    background:#F8D030;
+  }
+  .badges-card>div.rainbow {
+    background:#78C850;
+  }
+  .badges-card>div.soul {
+    background:#A040A0;
+  }
+  .badges-card>div.marsh {
+    background:#F85888;
+  }
+  .badges-card>div.volcano {
+    background:#F08030;
+  }
+  .badges-card>div.earth {
+    background:#E0C068;
+  }
+
+/*! pokemon list */
+.team-card .pokemon {
+  padding:10px;
+}
+
+.team-card .pokemon:nth-child(odd) {
+  background:#FFFDF2;
+}

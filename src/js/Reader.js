@@ -11,8 +11,29 @@ var Reader = function(data) {
 };
 
 /**
+ * Custom alphabet used in save file
+ */
+Reader.alphabet = (function(){
+  var alphabet = {
+    0x7F: ' ', 0x9A: '(', 0x9B: ')', 0x9C: ':',
+    0x9D: ';', 0x9E: '[', 0x9F: ']', 0xE3: '-',
+    0xE6: '?', 0xE7: '!', 0xE8: '.', 0xEF: '♂',
+    0xF1: '×', 0xF3: '/', 0xF4: ',', 0xF5: '♀'
+  };
+  for (var i=0; i<26; i++) {
+    alphabet[0x80+i] = String.fromCharCode(0x41+i);
+    alphabet[0xA0+i] = String.fromCharCode(0x61+i);
+  }
+  for (var i=0; i<10; i++) {
+    alphabet[0xF6+i] = String.fromCharCode(0x30+i);
+  }
+  
+  return alphabet;
+}());
+
+/**
  * Translate part of the data.
- * Uses the global **alphabet** char map. Unknown chars are ignored.
+ * Unknown chars are ignored.
  *
  * @param {int|object} start position or object containing **pos** and **len**
  * @param {int} data length
@@ -30,12 +51,12 @@ Reader.prototype.tr = function(pos, len) {
   var out = '';
   
   for (var i=pos; i<pos+len; i++) {
-    var c = this.data.charCodeAt(i);
+    var c = this.char(i);
     if (c == 0x50) {
       break;
     }
-    if (alphabet[c] != undefined) {
-      out+= alphabet[c];
+    if (Reader.alphabet[c] != undefined) {
+      out+= Reader.alphabet[c];
     }
   }
   
@@ -66,7 +87,7 @@ Reader.prototype.val = function(pos, len, reverse) {
   if (!reverse) {
     var off = (len-1)*8;
     for (var i=pos; i<pos+len; i++) {
-      var c = this.data.charCodeAt(i);
+      var c = this.char(i);
       out+= c<<off;
       off-=8;
     }
@@ -74,7 +95,7 @@ Reader.prototype.val = function(pos, len, reverse) {
   else {
     var off = 0;
     for (var i=pos; i<pos+len; i++) {
-      var c = this.data.charCodeAt(i);
+      var c = this.char(i);
       out+= c<<off;
       off+=8;
     }
@@ -102,8 +123,8 @@ Reader.prototype.bcd = function(pos, len) {
   var out = '';
   
   for (var i=pos; i<pos+len; i++) {
-    out+= this.data.charCodeAt(i)>>4;
-    out+= this.data.charCodeAt(i) & 0x0F;
+    out+= this.char(i)>>4;
+    out+= this.char(i) & 0x0F;
   }
   
   return parseInt(out);

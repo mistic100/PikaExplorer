@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-5 col-lg-4">
+    <div class="home-box profile-card clearfix">
+      <img src="http://placekitten.com/g/150/150" class="profile-image pull-left">
+      
+      <div class="media-content row">
+        <h2 class="player-name">
+          {{player.playerName}}
+          <small>#{{player.playerId}}</small>
+        </h2>
+        <div class="col-xxs col-xs-6 col-md-12" style="margin-bottom:10px;">
+          <i class="icon-clock"></i>
+          <span class="time-played">
+            {{player.timePlayed.hours}}h
+            {{player.timePlayed.minutes}}min
+            {{player.timePlayed.seconds}}s
+          </span>
+          <br>
+          <img src="src/img/pokedollar-white.png" width=24 height=24>
+          <span class="money">{{player.money}}</span>
+          <br>
+          <i class="icon-circle"></i>
+          <span class="coins">{{player.casinoCoins}}</span>
+        </div>
+        <div class="col-xxs col-xs-6 col-md-12">
+          {{player.pokemonsSeen}} Pokémons seen<br>
+          {{player.pokemonsOwned}} Pokémons owned
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-7 col-lg-8">
+    <div class="home-box badges-card clearfix row">
+      <div ng-repeat="badge in badges" class="{{badge.id}} {{!badge.owned ? 'inactive' : ''}} col-xs-6 col-sm-3">
+        <div class="badge-sprite-{{badge.id}}"></div>
+        <h3 class="badge-name">{{badge.label}} badge</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="home-box team-card row">
+      <div class="pokemon col-xs-12 col-sm-6">
+        <div class="pull-left">
+          <div class="pokemon-sprite-150"></div>
+          <h3 class="pokemon-name">Pikachu</h3>
+        </div>
+        
+        <div class="media-content">
+        
+        </div>
+      </div>
+      <div class="pokemon col-xs-12 col-sm-6">
+        <div class="pull-left">
+          <div class="pokemon-sprite-53"></div>
+          <h3 class="pokemon-name">Pikachu</h3>
+        </div>
+        
+        <div class="media-content">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

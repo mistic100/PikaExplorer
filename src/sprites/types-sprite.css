@@ -1,0 +1,21 @@
+[class*="type-sprite"] {
+  width:32px;
+  height:14px;
+  background:url('types-sprite.png') 32px 14px no-repeat;
+}
+
+.type-sprite-bug { background-position:0 0; }
+.type-sprite-dragon { background-position:-32px 0; }
+.type-sprite-electric { background-position:0 -14px; }
+.type-sprite-fighting { background-position:-32px -14px; }
+.type-sprite-fire { background-position:0 -28px; }
+.type-sprite-flying { background-position:-32px -28px; }
+.type-sprite-ghost { background-position:0 -42px; }
+.type-sprite-grass { background-position:-32px -42px; }
+.type-sprite-ground { background-position:0 -56px; }
+.type-sprite-ice { background-position:-32px -56px; }
+.type-sprite-normal { background-position:-64px 0; }
+.type-sprite-poison { background-position:-64px -14px; }
+.type-sprite-psychic { background-position:-64px -28px; }
+.type-sprite-rock { background-position:-64px -42px; }
+.type-sprite-water { background-position:-64px -56px; }
