@@ -2,10 +2,6 @@
 
 var RBY = function(file) {
   this.file = file;
-  
-  if (!this.check()) {
-    throw "Invalid data";
-  }
 };
 
 RBY.config = {

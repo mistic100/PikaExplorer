@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>Welcome to PikaExplorer!</h1>
+  <p>Pika explorer offers a complete view of your Pokemon Red/Blue/Yellow savegame, with badges, pokémons and items.</p>
+  <p>Let's start and upload your savegame bellow.<p>
+</div>
+
+<div class="form-inline">
+  <input type="file" ng-model="file" valid-file>
+  <button class="btn btn-sm btn-primary {{!file ? 'hide' : ''}}" ng-click="uploadFile()">Upload</button>
+</div>

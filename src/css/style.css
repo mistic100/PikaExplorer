@@ -7,6 +7,17 @@
    }
 }
 
+.bootstrap-filestyle .glyphicon {
+  padding-right:10px;
+}
+.bootstrap-filestyle .form-control {
+  background:white;
+}
+
+.media-content {
+  overflow:hidden;
+}
+
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
 .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,
 .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
@@ -23,10 +34,6 @@ html, body {
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family:'Titilium','Calibri',sans-serif !important;
-}
-
-.media-content {
-  overflow:hidden;
 }
 
 .wrapper {
