@@ -132,6 +132,8 @@ header {
   .profile-card .profile-image {
     display:block;
     margin-right:10px;
+    width:128px;
+    height:128px;
   }
   .profile-card .player-name {
     margin-top:5px;
@@ -143,8 +145,8 @@ header {
 
 @media (max-width: 480px) {
   .profile-card .profile-image {
-    width:100px;
-    height:100px;
+    width:96px;
+    height:96px;
   }
 }
 

@@ -16,34 +16,37 @@
 <header class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <span class="navbar-brand">PikaExplorer</span>
+      <a class="navbar-brand" href="#/home">PikaExplorer</a>
     </div>
     
-    <nav class="navbar-collapse">
+    <nav class="navbar-collapse" ng-controller="PikaNavCtrl">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li ng-class="{active: isActive('/home')}">
           <a href="#/home"><i class="glyphicon glyphicon-home"></i> <span>Overview</span></a>
         </li>
-        <li>
+        <li ng-class="{active: isActive('/pokemons')}">
           <a href="#/pokemons"><i class="icon-group"></i> <span>Pokémons</span></a>
         </li>
-        <li>
+        <li ng-class="{active: isActive('/pokedex')}">
           <a href="#/pokedex"><i class="glyphicon glyphicon-book"></i> <span>Pokédex</span></a>
         </li>
-        <li>
+        <li ng-class="{active: isActive('/items')}">
           <a href="#/items"><i class="glyphicon glyphicon-align-justify"></i> <span>Items</span></a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a ng-click="foo()"><i class="glyphicon glyphicon-off"></i></a>
+        <li bs-tooltip data-placement="bottom" title="Reset">
+          <a ng-click="reset()"><i class="glyphicon glyphicon-off"></i></a>
+        </li>
+        <li  ng-class="{active: isActive('/about')}" bs-tooltip data-placement="bottom" title="About">
+          <a href="#/about"><i class="icon-help"></i></a>
         </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<div class="wrapper">
+<div class="wrapper" custom-scrollbar>
   <div class="page container">
     <div ng-view></div>
   </div>
@@ -56,6 +59,7 @@
 <script src="src/js/RBY.js"></script>
 
 <script src="assets/jquery-1.10.2.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 <script src="assets/angular/angular.min.js"></script>
 <script src="assets/angular/angular-route.min.js"></script>
@@ -65,18 +69,12 @@
 <script src="assets/mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
 
 <script src="src/js/PikaExplorer.js"></script>
+<script src="src/js/PikaFilters.js"></script>
+<script src="src/js/PikaDirectives.js"></script>
+<script src="src/js/PikaNavCtrl.js"></script>
 <script src="src/js/PikaHomeCtrl.js"></script>
 <script src="src/js/PikaUploadCtrl.js"></script>
 <script src="src/js/PikaRBYSrvc.js"></script>
-
-<script>
-  $('.wrapper').mCustomScrollbar({
-    theme: 'dark-thick',
-    scrollButtons:{
-      enable: true
-    }
-  });
-</script>
 
 </body>
 </html>

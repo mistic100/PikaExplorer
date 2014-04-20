@@ -3,10 +3,14 @@
 var PikaExplorer = angular.module('PikaExplorer', [
     'ngRoute',
     
+    'PikaNavCtrl',
     'PikaHomeCtrl',
     'PikaUploadCtrl',
     
-    'PikaRBYSrvc'
+    'PikaRBYSrvc',
+    
+    'PikaFilters',
+    'PikaDirectives'
 ]);
 
 PikaExplorer
@@ -17,6 +21,9 @@ PikaExplorer
             controller: 'PikaHomeCtrl',
             needData: true
         })
+        .when('/about', {
+            templateUrl: 'template/about.htm'
+        })
         .when('/upload', {
             templateUrl: 'template/upload.htm',
             controller: 'PikaUploadCtrl'
@@ -25,23 +32,14 @@ PikaExplorer
             redirectTo: '/home'
         });
   }])
+
   .run(['$rootScope', '$location', '$route', 'PikaRBYSrvc',
   function($rootScope, $location, $route, rby) {
-      var routesNeedingData = [];
-      angular.forEach($route.routes, function(route, path) {
-          route.needData && routesNeedingData.push(path);
-      });
-      
       $rootScope.$on('$routeChangeStart', function(e, n, c) {
-          var needsData = routesNeedingData.indexOf($location.path()) != -1;
+          var needsData = !!($location.path()) && ($route.routes[$location.path()].needData || false);
           
           if (needsData && !rby.hasData()) {
               $location.path('/upload');
           }
       });
-    
-      $rootScope.foo = function() {
-          rby.deleteData();
-          $location.path('/upload');
-      };
   }]);

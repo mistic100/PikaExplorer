@@ -7,5 +7,6 @@ function($scope, rby) {
 
     $scope.player = rby.getPlayer();
     $scope.badges = rby.getReadableBadges();
+    $scope.pokemons = rby.getTeamPokemons();
     
 }]);
